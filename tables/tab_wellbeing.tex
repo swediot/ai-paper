@@ -1,0 +1,29 @@
+\begin{table}
+\centering
+\begin{talltblr}[         %% tabularray outer open
+caption={The Effect of Overwork on Domain-Specific Satisfaction\label{tab:wellbeing}},
+note{}={* p \num{< 0.1}, ** p \num{< 0.05}, *** p \num{< 0.01}},
+note{ }={\scriptsize * p<0.1, ** p<0.05, *** p<0.01. Individual and year fixed effects. Standard errors clustered at the individual level. Controls: age, age\textsuperscript{2}, female, has children. All outcomes scaled 0--10.},
+]                     %% tabularray outer close
+{                     %% tabularray inner open
+colspec={Q[]Q[]Q[]Q[]Q[]Q[]},
+hline{2}={1-6}{solid, black, 0.05em},
+hline{8}={1-6}{solid, black, 0.05em},
+hline{1}={1-6}{solid, black, 0.08em},
+hline{12}={1-6}{solid, black, 0.08em},
+column{2-6}={}{halign=c},
+column{1}={}{halign=l},
+}                     %% tabularray inner close
+& Life Sat. & Job Sat. & Free Time & Work Cond. & Work Amount \\
+Hours Gap & \num{0.001} & \num{0.001} & \num{-0.018}*** & \num{-0.013}*** & \num{-0.020}*** \\
+& (\num{0.001}) & (\num{0.002}) & (\num{0.003}) & (\num{0.002}) & (\num{0.003}) \\
+French Region & \num{0.134} & \num{-0.150} & \num{0.272} & \num{-0.093} & \num{-0.178} \\
+& (\num{0.098}) & (\num{0.197}) & (\num{0.216}) & (\num{0.144}) & (\num{0.261}) \\
+Hours Gap $\times$ French & \num{-0.002} & \num{-0.004} & \num{-0.024}*** & \num{-0.007}*** & \num{-0.006}* \\
+& (\num{0.002}) & (\num{0.002}) & (\num{0.004}) & (\num{0.003}) & (\num{0.004}) \\
+Observations & \num{79143} & \num{69718} & \num{77148} & \num{79095} & \num{61246} \\
+R$^2$ & \num{0.561} & \num{0.515} & \num{0.558} & \num{0.500} & \num{0.485} \\
+FE: Individual & X & X & X & X & X \\
+FE: Year & X & X & X & X & X \\
+\end{talltblr}
+\end{table}

@@ -1,0 +1,91 @@
+\documentclass[10pt]{article}
+
+% --- Geometry ---------------------------------------------------------------
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{setspace}
+\singlespacing
+\usepackage[skip=10pt plus1pt, indent=0pt]{parskip}
+
+% --- Page Layout & Orphan/Widow Control -------------------------------------
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+% --- Fonts and Encoding -----------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathpazo}  % Palatino—a workhorse for economics papers
+
+% --- Math and Symbols -------------------------------------------------------
+\usepackage{amsmath,amssymb}
+
+% --- Tables (tabularray for modelsummary output) ----------------------------
+\usepackage{tabularray}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{codehigh}
+\usepackage[normalem]{ulem}
+\UseTblrLibrary{booktabs}
+\UseTblrLibrary{siunitx}
+\sisetup{group-separator = {,}, group-minimum-digits = 4}
+\newcommand{\tinytableTabularrayUnderline}[1]{\underline{#1}}
+\newcommand{\tinytableTabularrayStrikeout}[1]{\sout{#1}}
+\NewTableCommand{\tinytableDefineColor}[3]{\definecolor{#1}{#2}{#3}}
+\usepackage{booktabs}
+
+% --- Figures ----------------------------------------------------------------
+\usepackage[font=small, labelfont=bf]{caption}
+
+% --- Citations --------------------------------------------------------------
+\usepackage[authoryear,round]{natbib}
+\bibliographystyle{aer}
+
+% --- Hyperlinks -------------------------------------------------------------
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks = true,
+  citecolor  = blue!70!black,
+  linkcolor  = blue!70!black,
+  urlcolor   = blue!70!black
+}
+
+% --- Appendix ---------------------------------------------------------------
+\usepackage[toc,page]{appendix}
+
+% --- Miscellaneous ----------------------------------------------------------
+\usepackage{xcolor}
+\usepackage{enumitem}
+
+% --- Metadata ---------------------------------------------------------------
+\title{\textbf{The Cultural Cost of Overwork:\\
+Evidence from the Swiss R\"{o}stigraben}}
+\author{Giulian Etingin-Frati, Claude Opus 4.6, and Gemini 3 Pro}
+\date{\today}
+
+% ============================================================================
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\noindent
+We exploit Switzerland's linguistic border between French- and German-speaking regions ---the \emph{R\"{o}stigraben}---to test whether cultural norms shape the psychological cost of overwork. Using 25 waves of the Swiss Household Panel (1999--2023), we construct a panel of employed individuals in German- and French-speaking regions and measure overwork as the gap between actual and contractual weekly hours. Individual and year fixed effects regressions reveal that overwork is significantly more psychologically costly for French-speaking workers: each additional hour beyond the contract increases post-work exhaustion by 70\%, work-life interference by 112\%, and difficulty disconnecting by 34\% in French-speaking regions (all $p < 0.02$). Overwork also reduces satisfaction with free time and work conditions significantly more for French-speaking workers. These burnout channels operate even though global life and job satisfaction show no significant cultural moderation, indicating that the welfare costs of overwork are domain-specific. The effects are persistent across demographic groups, though managers face significantly higher penalties. Our findings point to deep-seated cultural schemas that shape how overwork translates into psychological strain, independent of institutional constraints.
+\\[6pt]
+\textbf{JEL Classification:} J22, J28, Z13, R12 \\
+\textbf{Keywords:} work intensity, labor supply, working hours, cultural norms, subjective well-being, Swiss Household Panel, R\"{o}stigraben
+\end{abstract}
+
+\newpage
+\input{sections/01_intro}
+\input{sections/02_background}
+\input{sections/03_data}
+\input{sections/04_results}
+\input{sections/05_conclusion}
+
+\newpage
+\bibliography{references}
+
+\newpage
+\input{sections/06_appendix}
+
+\end{document}

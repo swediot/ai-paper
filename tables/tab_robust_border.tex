@@ -1,0 +1,30 @@
+\begin{table}
+\centering
+\begin{talltblr}[         %% tabularray outer open
+caption={Robustness: Border Canton Subsample\label{tab:robust_border}},
+note{ }={\scriptsize * p<0.1, ** p<0.05, *** p<0.01. Sample restricted to cantons bordering the R\"ostigraben (BE, FR, VS, GR, SO, JU).},
+]                     %% tabularray outer close
+{                     %% tabularray inner open
+colspec={Q[]Q[]Q[]Q[]},
+hline{2}={1-4}{solid, black, 0.05em},
+hline{10}={1-4}{solid, black, 0.05em},
+hline{1}={1-4}{solid, black, 0.08em},
+hline{14}={1-4}{solid, black, 0.08em},
+column{2-4}={}{halign=c},
+column{1}={}{halign=l},
+}                     %% tabularray inner close
+& Life Sat. (Border) & Job Sat. (Border) & Wants Less (Border) \\
+Hours Gap & \num{-0.003} & \num{-0.004} &  \\
+& (\num{0.002}) & (\num{0.003}) &  \\
+French Region & \num{0.157} & \num{-0.371} & \num{0.099} \\
+& (\num{0.128}) & (\num{0.267}) & (\num{0.124}) \\
+Hours Gap $\times$ French & \num{0.003} & \num{0.004} &  \\
+& (\num{0.003}) & (\num{0.004}) &  \\
+French $\times$ Post-2020 &  &  & \num{-0.022} \\
+&  &  & (\num{0.020}) \\
+Observations & \num{27,245} & \num{24,225} & \num{27,245} \\
+R$^2$ & \num{0.568} & \num{0.525} & \num{0.471} \\
+FE: Individual & X & X & X \\
+FE: Year & X & X & X \\
+\end{talltblr}
+\end{table}

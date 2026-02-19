@@ -1,0 +1,27 @@
+
+# Data
+swiss-household-panel/
+swiss-location-data/
+data/
+
+# R
+.Rproj.user
+.Rhistory
+.RData
+*.Ruserdata
+
+# LaTeX
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.pdf
+!figures/*.pdf
+!paper/*.pdf
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,76 @@
+\begin{appendices}
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{A\arabic{figure}}
+\setcounter{table}{0}
+\renewcommand{\thetable}{A\arabic{table}}
+
+\section{Additional Figures}\label{app:figures}
+
+\begin{figure}[htbp] 
+\centering
+\includegraphics[width=0.92\textwidth]{../figures/fig_app_hours_trends.pdf}
+\caption{Mean actual (solid) and contractual (dashed) weekly working hours by language region, 1999--2023.}\label{fig:app_hours_trends}
+\end{figure}
+
+\begin{figure}[htbp] 
+\centering
+\includegraphics[width=0.75\textwidth]{../figures/fig_app_map_job_sat.pdf}
+\caption{Mean job satisfaction by canton (2021--2023).}\label{fig:app_map_jsat}
+\end{figure}
+
+\begin{figure}[htbp] 
+\centering
+\includegraphics[width=\textwidth]{../figures/fig_app_cohort_trends.pdf}
+\caption{Share wanting fewer hours by birth cohort and language region. The Millennial panel begins in 2004 (the cohort midpoint, 1988, plus 16, i.e.\ the approximate year when the median Millennial entered the labor force). Note that around 2020, the Boomer cohort midpoint (1955) plus 65 equals 2020, so many Boomers were at or near statutory retirement age during the post-pandemic period; the late-period Boomer estimates should be interpreted with this compositional shift in mind.}\label{fig:app_cohort_trends}
+\end{figure}
+
+
+\section{Robustness Checks}\label{app:robustness}
+
+
+
+\subsection{Alternative Outcomes}
+
+Table~\ref{tab:robust_alt} replaces the primary burnout outcomes with two additional measures: satisfaction with work conditions, and post-work exhaustion.
+
+{\footnotesize
+\input{../tables/tab_robust_alt_outcomes.tex}
+}
+
+
+\newpage
+\section{Variable Definitions}\label{app:variables}
+
+{\footnotesize
+\begin{table}[htbp] 
+\centering
+\caption{Variable Definitions and SHP Source Codes}\label{tab:vardef}
+\begin{tabular}{llp{8cm}}
+\toprule
+\textbf{Variable} & \textbf{SHP Code} & \textbf{Description} \\
+\midrule
+Actual Hours      & \texttt{pw77}   & Number of hours worked per week in current main job \\
+Contractual Hours & \texttt{pw74}   & Number of contractual hours per week \\
+Hours Gap         & derived         & \texttt{pw77} $-$ \texttt{pw74} \\
+Wants Less        & derived         & $= 1$ if Hours Gap $> 0$ \\
+Life Satisfaction  & \texttt{pc44}   & ``How satisfied are you with your life in general?'' (0--10) \\
+Job Satisfaction   & \texttt{pw228}  & ``How satisfied are you with your job in general?'' (0--10) \\
+Free-Time Sat.     & \texttt{pa05}   & ``How satisfied are you with your free time?'' (0--10) \\
+Work-Life Interf.  & \texttt{pf50}   & Work interferes with private/family obligations (0--10) \\
+Post-Work Exhaust. & \texttt{pf51}   & Exhausted after work frequency (0--10) \\
+Disconnect Diff.   & \texttt{pf52}   & Difficulty disconnecting from work (0--10) \\
+
+Work Cond. Sat.    & \texttt{pw93}   & ``How satisfied are you with your working conditions?'' (0--10) \\
+Work Amount Sat.   & \texttt{pw230}  & ``How satisfied are you with the amount of work?'' (0--10) \\
+French             & \texttt{plingu} & $= 1$ if interview language is French ($= 2$) \\
+Canton             & \texttt{canton} & Canton of residence (from household file) \\
+Age                & \texttt{age}    & Age at time of interview \\
+Female             & \texttt{sex}    & $= 1$ if sex $= 2$ \\
+Education          & \texttt{educat} & Highest education level (11 categories, grouped to 3) \\
+Has Children       & \texttt{nbkid}  & $= 1$ if number of co-resident children $> 0$ (HH file) \\
+\bottomrule
+\end{tabular}
+\end{table}
+}
+
+\end{appendices}

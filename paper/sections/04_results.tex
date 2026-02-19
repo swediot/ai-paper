@@ -1,0 +1,58 @@
+\section{Results}\label{sec:results}
+
+\subsection{Descriptive Patterns}
+
+Table~\ref{tab:prepost} reports descriptive means of the mechanism and satisfaction variables by language region. French-speaking workers report higher exhaustion, greater work-life interference, and more difficulty disconnecting than German-speaking workers. Figure~\ref{fig:trends} shows that while the share wanting fewer hours increased in both regions after 2020, the divergence in well-being costs motivates our focus on cultural moderation.
+
+
+
+{\footnotesize
+\input{../tables/tab_prepost.tex}
+}
+
+\subsection{Burnout and Boundary-Setting Mechanisms}
+
+Table~\ref{tab:mechanisms} presents the core results. We estimate Equation~\eqref{eq:wellbeing} using three outcomes that capture exhaustion and boundary-setting: post-work exhaustion, work-life interference, and difficulty disconnecting.
+
+{\footnotesize
+\input{../tables/tab_mechanisms.tex}
+}
+
+The interaction term $\hat{\beta}_3$ (Hours Gap $\times$ French) is highly significant for all four outcomes:
+
+\begin{enumerate}
+    \item \textbf{Exhaustion} (column~2): Each additional hour of overwork increases post-work exhaustion by 0.018 points more for French-speaking workers ($p < 0.001$). The cultural penalty is approximately 70\% of the baseline effect.
+    \item \textbf{Work-life interference} (column~3): The interaction coefficient of 0.033 ($p < 0.001$) indicates that overwork spills over into private life far more severely for French-speaking workers---consistent with a cultural norm that values clear boundaries between work and personal domains.
+    \item \textbf{Difficulty disconnecting} (column~4): French-speaking workers who overwork report significantly greater difficulty mentally detaching from their jobs ($\hat{\beta}_3 = 0.010$, $p = 0.015$). Boundary violations are not just time-based but cognitive.
+
+\end{enumerate}
+
+The magnitudes are economically meaningful. A worker transitioning from zero overwork to five additional hours per week---approximately the interquartile range of the hours gap---would experience a $5 \times 0.018 = 0.09$-point larger increase in exhaustion and a $5 \times 0.033 = 0.17$-point larger increase in work-life interference if French-speaking, equivalent to roughly 12\% and 18\% of the within-person standard deviation of these variables.
+
+\subsection{Satisfaction Outcomes}
+
+Table~\ref{tab:wellbeing} extends the analysis to five domain-specific satisfaction measures. The cultural moderation is strongest for satisfaction with free time ($\hat{\beta}_3 = -0.024$, $p < 0.001$): each hour of overwork reduces free-time satisfaction by 0.024 points more for French-speaking workers. Satisfaction with work conditions ($\hat{\beta}_3 = -0.007$, $p = 0.010$) and the amount of work ($\hat{\beta}_3 = -0.006$, $p = 0.088$) show consistent negative interactions.
+
+{\footnotesize
+\input{../tables/tab_wellbeing.tex}
+}
+
+Life satisfaction ($p = 0.25$) and job satisfaction ($p = 0.12$) are not individually significant, suggesting that the cultural penalty operates through specific channels---exhaustion, boundary violations, and domain-specific dissatisfaction---rather than through broad reductions in global well-being.
+
+\subsection{Heterogeneity}
+
+Figure~\ref{fig:het} displays the interaction coefficient $\hat{\beta}_3$ (Hours Gap $\times$ French) for three outcomes: exhaustion, work-life interference, and ability to disconnect. We estimate effects separately for subsamples defined by gender, parental status, managerial role, and border region residence.
+ 
+ \begin{figure}[htbp] 
+\centering
+\includegraphics[width=0.65\textwidth]{../figures/fig_heterogeneity_exhaust.pdf}
+
+\vspace{0.2cm}
+\includegraphics[width=0.65\textwidth]{../figures/fig_heterogeneity_wli.pdf}
+
+\vspace{0.2cm}
+\includegraphics[width=0.65\textwidth]{../figures/fig_heterogeneity_disc.pdf}
+\caption{Heterogeneity in the cultural effect of overwork on well-being outcomes. Coefficients on Hours Gap $\times$ French from separate regressions. 95\% confidence intervals. Panels from top to bottom: Post-work exhaustion, Work-life interference, Ability to disconnect.}\label{fig:het}
+\end{figure}
+ 
+ We interpret these heterogeneity results with caution. While point estimates exhibit some variation across groups, the differences between subgroups are not statistically significant, as indicated by the overlapping confidence intervals. The evidence is therefore only suggestive. For instance, the slightly larger estimates for men and workers without children offer no support for the "double burden" hypothesis. Similarly, while managers appear to face a larger penalty—consistent with role conflict—and border regions show slightly attenuated effects for some outcomes, we cannot reject the null hypothesis of homogeneous effects. This stability suggests that the cultural norm of work-life separation is a broad-based feature of the French-speaking region, affecting workers relatively uniformly across demographic and occupational lines.

@@ -1,0 +1,68 @@
+\section{Data and Methodology}\label{sec:data}
+
+\subsection{The Swiss Household Panel}
+
+Our data come from the Swiss Household Panel (SHP), a nationally representative longitudinal survey administered annually since 1999 by the Swiss Centre of Expertise in the Social Sciences (FORS). We use all 25 available waves (1999--2023), covering the period from the introduction of the survey through the post-pandemic recovery. The SHP interviews all adult members of selected households, re-tracking them even if they move or change household composition, yielding a genuine panel at the individual level.
+
+We work with the pre-harmonized long-format person file (\texttt{shplong\_p\_user.dta}, containing 964 variables), merged with the household long-format file (\texttt{shplong\_h\_user.dta}, 300 variables) on household ID and year. This merge attaches geographic identifiers---canton and linguistic region---from the household questionnaire to each person-year observation.
+
+\subsection{Sample Construction}
+
+We restrict the sample to individuals who satisfy three conditions: (i) aged 18--65 at the time of interview, (ii) currently employed (working status code 1, 2, or 3, corresponding to full-time, part-time, or irregular employment), and (iii) interviewed in German or French.\footnote{We exclude Italian-speaking respondents (approximately 5\% of the employed sample) because their small sample size limits the statistical power of within-person estimators. Our analysis thus focuses on the R\"{o}stigraben---the German--French divide---which is the primary cultural cleavage in the Swiss labor market literature.} Observations with non-positive values for all key variables are recoded to missing following the SHP's standard convention.\footnote{The SHP uses negative codes to indicate missing information: $-1$ = ``don't know,'' $-2$ = ``no answer,'' $-3$ = ``inapplicable,'' and $-4$ through $-8$ for various technical errors.}
+
+The resulting panel consists of person-year observations from German- and French-speaking employed individuals observed over 1999--2023. Table~\ref{tab:desc} presents descriptive statistics by language region.
+
+\subsection{Key Variables}
+
+\paragraph{Overwork (Hours Gap).} Our primary dependent variable is the difference between actual and contractual weekly working hours:
+\begin{equation}\label{eq:hoursgap}
+  \text{Hours Gap}_{it} = \text{Actual Hours}_{it} - \text{Contractual Hours}_{it},
+\end{equation}
+where Actual Hours is variable \texttt{pw77} (``number of hours worked per week'') and Contractual Hours is \texttt{pw74} (``contractual hours per week''). A positive gap indicates overwork: the individual works more than their contract specifies. We also define a binary indicator $\text{WantsLess}_{it} = \mathbf{1}[\text{Hours Gap}_{it} > 0]$, which equals one when the worker is overemployed relative to their contractual benchmark.
+
+\paragraph{Subjective Well-being.} We use five well-being outcomes, all measured on 0-10 scales:
+\begin{itemize}[nosep]
+  \item \emph{Life satisfaction} (\texttt{pc44}): ``How satisfied are you with your life in general?''
+  \item \emph{Job satisfaction} (\texttt{pw228}): ``How satisfied are you with your job in general?''
+  \item \emph{Free-time satisfaction} (\texttt{pa05}): ``How satisfied are you with your free time?''
+  \item \emph{Work-life interference} (\texttt{pf50}): ``To what extent does your work interfere with your private activities or family obligations?'' (0 = not at all, 10 = very strongly)
+  \item \emph{Post-work exhaustion} (\texttt{pf51}): ``How often are you too exhausted after work to do things you would like?''
+\end{itemize}
+
+\paragraph{Cultural Region.} Our key treatment variable is a binary indicator $\text{French}_{i}$ equal to one if the individual's interview language (\texttt{plingu}) is French, and zero if it is German.
+
+\paragraph{Controls.} All regressions include age, age squared, a female indicator, and a dummy for having co-resident children.
+
+\subsection{Descriptive Statistics}
+
+{\footnotesize
+\input{../tables/tab_desc.tex}
+}
+
+The two regions differ in sample composition but not dramatically. German-speaking respondents are slightly younger and more likely to hold tertiary degrees. The mean hours gap is positive in both regions: workers across Switzerland work approximately 2--3 hours more per week than their contracts specify. The share wanting fewer hours is broadly similar, though the raw means mask important temporal dynamics that we explore below.
+
+Figure~\ref{fig:trends} plots the evolution of two key outcomes by language region. Panel A shows the share of workers with a positive hours gap (wanting fewer hours). Panel B shows mean life satisfaction. Both series exhibit visible disruption around 2020, but the trajectories vary by region.
+
+\begin{figure}[htbp] 
+\centering
+\includegraphics[width=0.65\textwidth]{../figures/fig_trends.pdf}
+\caption{Trends in overwork preference and life satisfaction by language region, 1999--2023.}\label{fig:trends}
+\end{figure}
+
+Figure~\ref{fig:maps} shows the geographic distribution of our key variables. Panel A maps Switzerland's language regions, highlighting the R\"{o}stigraben. Panel B maps the post-pandemic (2021--2023) cantonal average of the overwork indicator.
+
+\begin{figure}[htbp] 
+\centering
+\includegraphics[width=0.95\textwidth]{../figures/fig_map_language.pdf}
+\caption{Maps of Switzerland: language regions (A) and post-pandemic overwork prevalence by canton (B).}\label{fig:maps}
+\end{figure}
+
+\subsection{Empirical Strategy}
+
+Our identification exploits within-person variation in overwork and its interaction with a time-invariant cultural indicator. We estimate:
+\begin{equation}\label{eq:wellbeing}
+  Y_{it} = \beta_1 \cdot \text{HoursGap}_{it} + \beta_3 \cdot (\text{HoursGap}_{it} \times \text{French}_i) + \mathbf{X}_{it}'\gamma + \alpha_i + \delta_t + \varepsilon_{it},
+\end{equation}
+where $Y_{it}$ is an outcome capturing burnout (exhaustion, work-life interference, difficulty disconnecting, work stress) or domain-specific satisfaction (free time, work conditions, job, life). The individual fixed effects $\alpha_i$ absorb all time-invariant characteristics ---including the main effect of $\text{French}_i$---and the year fixed effects $\delta_t$ absorb common shocks. The coefficient of interest is $\hat{\beta}_3$: the differential effect of an additional hour of overwork for French-speaking workers relative to German-speaking workers. A positive $\hat{\beta}_3$ on exhaustion or work-life interference, or a negative $\hat{\beta}_3$ on satisfaction, would indicate that overwork is more psychologically costly in French-speaking regions.
+
+All standard errors are clustered at the individual level to account for serial correlation within person-year panels.

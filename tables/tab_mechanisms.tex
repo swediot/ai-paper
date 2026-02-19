@@ -1,0 +1,29 @@
+\begin{table}
+\centering
+\begin{talltblr}[         %% tabularray outer open
+caption={Burnout and Boundary-Setting Mechanisms\label{tab:mechanisms}},
+note{}={* p \num{< 0.1}, ** p \num{< 0.05}, *** p \num{< 0.01}},
+note{ }={\scriptsize * p<0.1, ** p<0.05, *** p<0.01. Individual and year fixed effects. Standard errors clustered at the individual level. Controls: age, age\textsuperscript{2}, female, has children. Exhaustion, work-life interference, and disconnecting are scaled 0--10.},
+]                     %% tabularray outer close
+{                     %% tabularray inner open
+colspec={Q[]Q[]Q[]Q[]},
+hline{2}={1-4}{solid, black, 0.05em},
+hline{8}={1-4}{solid, black, 0.05em},
+hline{1}={1-4}{solid, black, 0.08em},
+hline{12}={1-4}{solid, black, 0.08em},
+column{2-4}={}{halign=c},
+column{1}={}{halign=l},
+}                     %% tabularray inner close
+& Exhaustion & Work-Life Int. & Disconnect \\
+Hours Gap & \num{0.025}*** & \num{0.030}*** & \num{0.030}*** \\
+& (\num{0.003}) & (\num{0.004}) & (\num{0.003}) \\
+French Region & \num{-0.086} & \num{-0.175} & \num{0.072} \\
+& (\num{0.211}) & (\num{0.237}) & (\num{0.267}) \\
+Hours Gap $\times$ French & \num{0.018}*** & \num{0.033}*** & \num{0.010}** \\
+& (\num{0.004}) & (\num{0.005}) & (\num{0.004}) \\
+Observations & \num{74089} & \num{74053} & \num{74125} \\
+R$^2$ & \num{0.563} & \num{0.522} & \num{0.617} \\
+FE: Individual & X & X & X \\
+FE: Year & X & X & X \\
+\end{talltblr}
+\end{table}
